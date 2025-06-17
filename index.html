@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт с видео-фоном и градиентом</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Видео/GIF фон -->
+    <div class="video-background">
+        <img src="src/images/background.gif" alt="Анимированный фон" class="gif-bg"> 
+        <!-- Если хочешь видео вместо GIF, используй <video>:
+        <video autoplay muted loop>
+            <source src="background.mp4" type="video/mp4">
+        </video>
+        -->
+    </div>
+
+    <!-- Градиент с размытием -->
+    <div class="gradient-overlay"></div>
+
+    <!-- Контент -->
+    <div class="content">
+        <div class="text-block">
+            <h1>Текст на фоне видео</h1>
+            <p>Градиент и размытие делают его удобочитаемым.</p>
+        </div>
+        <div class="text-block">
+            <h1>Текст на фоне видео</h1>
+            <p>Градиент и размытие делают его удобочитаемым.</p>
+        </div>
+        <div class="text-block">
+            <h1>Текст на фоне видео</h1>
+            <p>Градиент и размытие делают его удобочитаемым.</p>
+        </div>
+        <div class="text-block">
+            <h1>Текст на фоне видео</h1>
+            <p>Градиент и размытие делают его удобочитаемым.</p>
+        </div>
+        <div class="text-block">
+            <h1>Текст на фоне видео</h1>
+            <p>Градиент и размытие делают его удобочитаемым.</p>
+        </div>
+        <div class="text-block">
+            <h1>Текст на фоне видео</h1>
+            <p>Градиент и размытие делают его удобочитаемым.</p>
+        </div>
+        
+        <section class="carousel-container">
+        <button class="carousel-arrow left">‹</button>
+        
+        <div class="carousel">
+            <div class="card" data-details="Детальное описание Нео-Токио...">
+                <div class="card-content">
+                    <img src="src/images/card1.png" alt="Кибер-город">
+                    <h3>НЕО-ТОКИО</h3>
+                    <p>Город, где технологии сливаются с человечностью.</p>
+                </div>
+            </div>
+
+            <div class="card" data-details="Детальное описание Нео-Токио2...">
+                <div class="card-content">
+                    <img src="src/images/card2.png" alt="Кибер-город2">
+                    <h3>НЕО-ТОКИО2</h3>
+                    <p>Город, где технологии сливаются с человечностью2.</p>
+                </div>
+            </div>
+
+            <div class="card" data-details="Детальное описание Нео-Токио2...">
+                <div class="card-content">
+                    <img src="src/images/card3.png" alt="Кибер-город3">
+                    <h3>НЕО-ТОКИО3</h3>
+                    <p>Город, где технологии сливаются с человечностью2.</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="carousel-arrow right">›</button>
+        </section>
+
+        <!-- Модальное окно -->
+        <div class="modal-overlay">
+            <div class="modal-card">
+                <button class="close-modal">&times;</button>
+                <img src="" alt="" class="modal-image">
+                <h3 class="modal-title"></h3>
+                <p class="modal-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
