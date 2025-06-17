@@ -3,7 +3,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Общие стили */
 body {
     margin: 0;
     padding: 0;
@@ -19,95 +18,65 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* Занимает всю высоту экрана */
-    min-height: 100%; /* На случай, если контент очень длинный */
+    height: 100vh;
+    min-height: 100%;
     z-index: -2;
 }
 
-.video-background img {
-    width: 100%;
-    height: auto; /* Сохраняет пропорции */
-    min-height: 100vh; /* Растягивается на весь экран */
-    object-fit: cover; /* Обрезает лишнее, если соотношение сторон не совпадает */
-}
-
-.video-background img, 
+.video-background img,
 .video-background video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Чтобы GIF/видео заполняло фон */
+    object-fit: cover;
 }
 
 /* Градиент с размытием */
 .gradient-overlay {
-    position: fixed; /* Фиксируем на месте */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: radial-gradient(
         ellipse at center,
-        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.2) 40%,
         rgba(0, 0, 0, 0.8) 100%
     );
     z-index: -1;
-    transition: opacity 0.5s ease; /* Плавное изменение затемнения */
-    will-change: opacity; /* Оптимизация */
+    transition: opacity 0.5s ease;
+    will-change: opacity;
 }
 
 .content {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрируем блоки */
-    padding: 50px 10%; /* Отступы по бокам (10%) */
+    align-items: center;
+    padding: 50px 10%;
 }
 
+/* Текст-блоки (стеклянные) */
 .text-block {
     width: 100%;
-    max-width: 90%;
-    min-width: 33%; /* Минимальная ширина */
+    max-width: 95%;
+    min-width: 33%;
     margin: 20px 0;
     padding: 30px;
-}
-
-.text-block {
-    transition: transform 0.5s ease-out; /* Плавное движение */
-    will-change: transform; /* Оптимизация для браузера */
-    transform-style: preserve-3d; /* Для лёгкого 3D-эффекта */
-}
-
-.text-block {
-    transform: translateX(0); /* Изначально — по центру */
-    transition: 
-        transform 0.5s ease-out,
-        filter 0.5s ease-out; /* Плавное изменение свечения */
-    filter: brightness(0.8) drop-shadow(0 0 5px rgba(0, 200, 255, 0.3)); /* Стартовое свечение */
-}
-
-.text-block {
-    background: rgba(146, 183, 255, 0.58); /* Тёмно-синий полупрозрачный фон */
+    transition: transform 0.5s ease-out, filter 0.5s ease-out;
+    transform: translateX(0);
+    filter: brightness(0.8) drop-shadow(0 0 5px rgba(0, 200, 255, 0.3));
+    background: rgba(255, 255, 255, 0.15); /* Белый полупрозрачный фон */
     backdrop-filter: blur(12px);
     border-radius: 8px;
-    border: 1px solid rgba(0, 150, 255, 0.3); /* Голубая граница */
+    border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 
-        0 0 15px rgba(0, 100, 255, 0.5), /* Синяя неоновая тень */
-        inset 0 0 10px rgba(0, 200, 255, 0.2); /* Внутреннее свечение */
+        0 0 15px rgba(0, 100, 255, 0.5),
+        inset 0 0 10px rgba(255, 255, 255, 0.2);
     position: relative;
     overflow: hidden;
+    color: white; /* Белый текст */
 }
 
-/* Адаптив для мобильных */
-@media (max-width: 768px) {
-    .content {
-        padding: 30px 5%; /* Меньше отступы на мобильных */
-    }
-    .text-block {
-        min-width: 85%; /* Блоки шире на маленьких экранах */
-        transform: none !important;
-    }
-}
-
-/* Боковая неоновая полоса */
+/* Неоновая боковая полоса */
 .text-block::before {
     content: "";
     position: absolute;
@@ -119,36 +88,26 @@ body {
         rgba(0, 200, 255, 0.8), 
         rgba(0, 80, 255, 0.5));
     box-shadow: 0 0 10px rgba(0, 200, 255, 0.8);
+    animation: neonGlow 2s infinite alternate;
 }
 
 h1, h2 {
-    font-family: 'Orbitron', sans-serif; /* Жёсткий техно-шрифт */
+    font-family: 'Orbitron', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #00ccff; /* Неоново-голубой */
+    color: #00ccff;
     text-shadow: 0 0 10px rgba(0, 200, 255, 0.7);
 }
 
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-}
+h1 { font-size: 2.5rem; margin-bottom: 20px; }
+h2 { font-size: 1.8rem; margin-bottom: 15px; }
 
 p {
-    font-family: 'Rajdhani', sans-serif; /* Футуристичный, но читаемый */
+    font-family: 'Rajdhani', sans-serif;
     font-weight: 500;
     font-size: 1.2rem;
-    color: #e0e0e0;
+    color: #ffffff;
     line-height: 1.6;
-}
-
-.text-block::before {
-    animation: neonGlow 2s infinite alternate;
 }
 
 @keyframes neonGlow {
@@ -156,32 +115,115 @@ p {
     to { opacity: 1; }
 }
 
+/* Карусель */
 
-/* ============================= КАРУСЕЛЬ ============================= */
-
-/* Карусель с активной центральной карточкой */
-.carousel {
-    display: flex;
-    align-items: center;
-    transform-style: preserve-3d;
-    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    padding: 40px 0;
+/* Carousel Container */
+/* Carousel Container */
+.carousel-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 0;
+  position: relative;
 }
 
+/* Cards Wrapper */
+.cards {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Fixed height for consistency */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px; /* For 3D effect */
+}
+
+/* Individual Cards */
 .card {
-    width: 250px;
-    height: 350px;
-    transition: all 0.5s ease;
-    transform: scale(0.9);
-    opacity: 0.7;
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 200, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 100, 255, 0.3);
+  transform-style: preserve-3d;
+  overflow: hidden;
 }
 
-/* Центральная карточка - активная */
+/* Left Card (Inactive) */
+.card.prev {
+  transform: translateX(-40%) scale(0.8);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+/* Right Card (Inactive) */
+.card.next {
+  transform: translateX(40%) scale(0.8);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+/* Center Card (Active) */
 .card.active {
-    transform: scale(1.1);
-    opacity: 1;
-    z-index: 10;
-    box-shadow: 0 0 30px rgba(0, 200, 255, 0.8);
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  z-index: 1;
+  box-shadow: 0 0 30px rgba(0, 200, 255, 0.8);
+}
+
+/* Arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #00ccff;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
+  transition: all 0.3s;
+}
+
+.carousel-arrow.left { left: 20px; }
+.carousel-arrow.right { right: 20px; }
+
+.carousel-arrow:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .card {
+    width: 80%;
+  }
+}
+
+.card img {
+    width: 90%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00ccff;
+    text-shadow: 0 0 8px rgba(0, 200, 255, 0.7);
 }
 
 /* Модальное окно */
@@ -224,7 +266,6 @@ p {
     cursor: pointer;
 }
 
-/* Анимации */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -235,52 +276,17 @@ p {
     to { transform: scale(1); }
 }
 
-.card-content {
-    padding: 20px;
-    text-align: center;
-}
-
-.card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.card h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: #00ccff;
-    text-shadow: 0 0 8px rgba(0, 200, 255, 0.7);
-}
-
-/* Кнопки навигации */
-.carousel-arrow {
-    background: rgba(0, 80, 120, 0.5);
-    border: none;
-    color: #00ccff;
-    font-size: 2rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-    margin: 0 20px;
-    box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
-    transition: all 0.3s;
-}
-
-.carousel-arrow:hover {
-    background: rgba(0, 120, 200, 0.7);
-    transform: scale(1.1);
-}
-
+/* Адаптив для мобильных */
 @media (max-width: 768px) {
-    .carousel {
-        gap: 15px;
+    .content {
+        padding: 30px 5%;
+    }
+    .text-block {
+        min-width: 85%;
+        transform: none !important;
     }
     .card {
-        width: 200px;
+        width: 60vw;
         height: 300px;
     }
     .modal-card {

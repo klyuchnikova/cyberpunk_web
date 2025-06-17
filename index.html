@@ -38,45 +38,38 @@
             <h1>Текст на фоне видео</h1>
             <p>Градиент и размытие делают его удобочитаемым.</p>
         </div>
-        <div class="text-block">
-            <h1>Текст на фоне видео</h1>
-            <p>Градиент и размытие делают его удобочитаемым.</p>
-        </div>
-        <div class="text-block">
-            <h1>Текст на фоне видео</h1>
-            <p>Градиент и размытие делают его удобочитаемым.</p>
-        </div>
         
+        <!-- Add container div around carousel -->
         <section class="carousel-container">
-        <button class="carousel-arrow left">‹</button>
-        
-        <div class="carousel">
-            <div class="card" data-details="Детальное описание Нео-Токио...">
-                <div class="card-content">
-                    <img src="src/images/card1.png" alt="Кибер-город">
-                    <h3>НЕО-ТОКИО</h3>
-                    <p>Город, где технологии сливаются с человечностью.</p>
+            <button class="carousel-arrow left">‹</button>
+            
+            <div class="cards"> <!-- Changed from "carousel" to "cards" to match CSS -->
+                <div class="card active" data-details="Детальное описание Нео-Токио...">
+                    <div class="card-content">
+                        <img src="src/images/card1.png" alt="Кибер-город">
+                        <h3>НЕО-ТОКИО</h3>
+                        <p>Город, где технологии сливаются с человечностью.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card" data-details="Детальное описание Нео-Токио2...">
-                <div class="card-content">
-                    <img src="src/images/card2.png" alt="Кибер-город2">
-                    <h3>НЕО-ТОКИО2</h3>
-                    <p>Город, где технологии сливаются с человечностью2.</p>
+                <div class="card next" data-details="Детальное описание Нео-Токио2...">
+                    <div class="card-content">
+                        <img src="src/images/card2.png" alt="Кибер-город2">
+                        <h3>НЕО-ТОКИО2</h3>
+                        <p>Город, где технологии сливаются с человечностью2.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card" data-details="Детальное описание Нео-Токио2...">
-                <div class="card-content">
-                    <img src="src/images/card3.png" alt="Кибер-город3">
-                    <h3>НЕО-ТОКИО3</h3>
-                    <p>Город, где технологии сливаются с человечностью2.</p>
+                <div class="card" data-details="Детальное описание Нео-Токио2...">
+                    <div class="card-content">
+                        <img src="src/images/card3.png" alt="Кибер-город3">
+                        <h3>НЕО-ТОКИО3</h3>
+                        <p>Город, где технологии сливаются с человечностью2.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <button class="carousel-arrow right">›</button>
+            
+            <button class="carousel-arrow right">›</button>
         </section>
 
         <!-- Модальное окно -->
