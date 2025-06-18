@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/news.css">
+</head>
+<body>
+    <!-- Sticky Navigation -->
+    <nav>
+        <div class="logo">CYBERPUNK</div>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="map.html">MAP</a></li>
+            <li><a href="news.html">HEADLINES</a></li>
+            <li><a href="contacts.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <!-- News Grid -->
+    <div class="news-grid">
+        <div class="square-flip">
+            <div class="square">
+                <div class="square-container">
+                    <div class="news-image">
+                        <img src="src/images/card1.png" alt="Нейро-интерфейс">
+                    </div>
+                    <div class="news-content">
+                        <h2 class="floating-text">NEURODRIVE</h2>
+                        <h3 class="floating-text">НОВЫЙ ЧИП ДЛЯ ПРЯМОГО ПОДКЛЮЧЕНИЯ К СЕТИ</h3>
+                        <div class="reactions">
+                            <span class="reaction">👍 142</span>
+                            <span class="reaction">👎 8</span>
+                            <span class="reaction">🎵 23</span>
+                            <span class="reaction">💾 45</span>
+                        </div>
+                        <button class="read-more-btn">READ MORE →</button>
+                    </div>
+                </div>
+            </div>
+            <div class="square2">
+                <div class="square-container2">
+                    <div class="align-center">
+                        <h2 class="floating-text">NEURODRIVE</h2>
+                        <h3 class="floating-text">НОВЫЙ ЧИП ДЛЯ ПРЯМОГО ПОДКЛЮЧЕНИЯ К СЕТИ</h3>
+                        <p>Корпорация NeonTech анонсировала прямое подключение к мозгу...</p>
+                        <div class="reactions">
+                            <span class="reaction">👍 142</span>
+                            <span class="reaction">👎 8</span>
+                            <span class="reaction">🎵 23</span>
+                            <span class="reaction">💾 45</span>
+                        </div>
+                        <button class="flip-back-btn">← BACK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="news.js"></script>
+</body>
+</html>

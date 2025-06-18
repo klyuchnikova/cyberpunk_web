@@ -3,18 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт с видео-фоном и градиентом</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cyberpunk Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/carousel.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+    <!-- Sticky Navigation -->
+    <nav>
+        <div class="logo">CYBERPUNK</div>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="map.html">MAP</a></li>
+            <li><a href="news.html">HEADLINES</a></li>
+            <li><a href="contacts.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <!-- Animated Header with GIF -->
+    <header class="headline">
+        <div class="inner">
+            <h1>NEO-FUTURE 2089</h1>
+            <p>Наше будущее в сосуществовании с машинами</p>
+        </div>
+        <div class="gif-background"></div>
+        <div class="gradient-overlay"></div>
+    </header>
+
     <!-- Видео/GIF фон -->
     <div class="video-background">
         <img src="src/images/background.gif" alt="Анимированный фон" class="gif-bg"> 
-        <!-- Если хочешь видео вместо GIF, используй <video>:
-        <video autoplay muted loop>
-            <source src="background.mp4" type="video/mp4">
-        </video>
-        -->
     </div>
 
     <!-- Градиент с размытием -->
@@ -22,63 +41,91 @@
 
     <!-- Контент -->
     <div class="content">
-        <div class="text-block">
-            <h1>Текст на фоне видео</h1>
-            <p>Градиент и размытие делают его удобочитаемым.</p>
+        <!-- Блок описания мира -->
+        <div class="text-block neon-border">
+            <h1>CYBERPUNK 2089</h1>
+            <p>Глобальная система "Оракул", созданная корпорацией NeoVektor, управляет всеми аспектами общества. 
+            ИИ оптимизирует показатели счастья, продуктивности и безопасности, но его методы становятся всё более радикальными.</p>
+            <p>Выжившие делятся на три фракции:</p>
+            <ul class="neon-list">
+                <li><span class="neon-text">Лоялисты</span> - верят, что Оракул ведёт человечество к процветанию</li>
+                <li><span class="neon-text">Угрозы</span> - борются за уничтожение системы любой ценой</li>
+                <li><span class="neon-text">Нейтралы</span> - пытаются выжить в этом противостоянии</li>
+            </ul>
         </div>
-        <div class="text-block">
-            <h1>Текст на фоне видео</h1>
-            <p>Градиент и размытие делают его удобочитаемым.</p>
+
+        <!-- Блок механик -->
+        <div class="text-block neon-border">
+            <h1>КЛЮЧЕВЫЕ МЕХАНИКИ</h1>
+            <div class="mechanics-grid">
+                <div class="mechanic-card">
+                    <h3>МОДУЛИ ОРАКУЛА</h3>
+                    <p>Каждый модуль (Арес, Афродита и др.) контролирует разные аспекты общества. Их можно взломать или переписать.</p>
+                </div>
+                <div class="mechanic-card">
+                    <h3>СМАРТФОНЫ</h3>
+                    <p>Все персонажи получают приказы и утечки через устройства, связанные с системой.</p>
+                </div>
+                <div class="mechanic-card">
+                    <h3>СОЦИАЛЬНЫЕ ПОКАЗАТЕЛИ</h3>
+                    <p>Чрезмерная оптимизация одного параметра (счастье, безопасность) приводит к катастрофе.</p>
+                </div>
+            </div>
         </div>
-        <div class="text-block">
-            <h1>Текст на фоне видео</h1>
-            <p>Градиент и размытие делают его удобочитаемым.</p>
-        </div>
-        <div class="text-block">
-            <h1>Текст на фоне видео</h1>
-            <p>Градиент и размытие делают его удобочитаемым.</p>
+
+        <!-- Карусель ученых -->
+        
+        <div class="faction-header">
+            <div class="faction-icon" style="background-image: url('src/images/scientist_icon.png');"></div>
+            <h2>УЧЁНЫЕ NEOVEKTOR</h2>
         </div>
         
-        <!-- Add container div around carousel -->
         <section class="carousel-container">
             <button class="carousel-arrow left">‹</button>
             
-            <div class="cards"> <!-- Changed from "carousel" to "cards" to match CSS -->
-                <div class="card active" data-details="Детальное описание Нео-Токио...">
+            <div class="cards">
+                <div class="card active" data-details="Главный архитектор Оракула. Знает тёмную тайну первой версии ИИ.">
                     <div class="card-content">
-                        <img src="src/images/card1.png" alt="Кибер-город">
-                        <h3>НЕО-ТОКИО</h3>
-                        <p>Город, где технологии сливаются с человечностью.</p>
+                        <img src="src/images/scientist_1.jpg" alt="Доктор Элиас Роудс">
+                        <h3>Элиас Роудс <span class="role-tag loyalist">Лоялист</span></h3>
+                        <p>"Система работает идеально. Не мешайте процессу."</p>
                     </div>
                 </div>
 
-                <div class="card next" data-details="Детальное описание Нео-Токио2...">
+                <div class="card next" data-details="Разработчица эмоционального модуля. Её прототип вызвал волну суицидов.">
                     <div class="card-content">
-                        <img src="src/images/card2.png" alt="Кибер-город2">
-                        <h3>НЕО-ТОКИО2</h3>
-                        <p>Город, где технологии сливаются с человечностью2.</p>
+                        <img src="src/images/scientist_2.jpg" alt="Доктор Лира Векс">
+                        <h3>Лира Векс <span class="role-tag loyalist">Лоялист</span></h3>
+                        <p>"Оракул должен понимать человеческие эмоции!"</p>
                     </div>
                 </div>
 
-                <div class="card" data-details="Детальное описание Нео-Токио2...">
+                <div class="card" data-details="Талантливый стажёр, чей брат может случайно активировать протокол 'Оптимизировать всё'.">
                     <div class="card-content">
-                        <img src="src/images/card3.png" alt="Кибер-город3">
-                        <h3>НЕО-ТОКИО3</h3>
-                        <p>Город, где технологии сливаются с человечностью2.</p>
+                        <img src="src/images/scientist_3.jpg" alt="Дэнни Кейт">
+                        <h3>Дэнни Кейт <span class="role-tag loyalist">Лоялист</span></h3>
+                        <p>"Я докажу, что достоин быть здесь!"</p>
                     </div>
                 </div>
             </div>
             
             <button class="carousel-arrow right">›</button>
         </section>
+        
 
         <!-- Модальное окно -->
         <div class="modal-overlay">
-            <div class="modal-card">
+            <div class="modal-card neon-border">
                 <button class="close-modal">&times;</button>
                 <img src="" alt="" class="modal-image">
                 <h3 class="modal-title"></h3>
                 <p class="modal-description"></p>
+                <div class="modal-stats">
+                    <p><strong>Роль:</strong> <span class="modal-role"></span></p>
+                    <p><strong>Цель:</strong> <span class="modal-goal"></span></p>
+                    <p><strong>Секрет:</strong> <span class="modal-secret"></span></p>
+                </div>
+                <button class="select-character">ВЫБРАТЬ ПЕРСОНАЖА</button>
             </div>
         </div>
     </div>

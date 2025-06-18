@@ -1,0 +1,36 @@
+.cyber-map-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cyber-map {
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #00ccff;
+    box-shadow: 0 0 30px rgba(0, 200, 255, 0.4);
+}
+
+.location-marker {
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.neon-sign {
+    font-family: 'Orbitron', sans-serif;
+    color: #00ccff;
+    text-shadow: 0 0 10px rgba(0, 200, 255, 0.7);
+    background: rgba(0, 10, 20, 0.8);
+    padding: 8px 15px;
+    border-radius: 3px;
+    border: 1px solid #00ccff;
+    white-space: nowrap;
+    animation: neon-pulse 1.5s infinite alternate;
+}
+
+@keyframes neon-pulse {
+    from { opacity: 0.7; }
+    to { opacity: 1; }
+}

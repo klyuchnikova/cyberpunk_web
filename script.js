@@ -8,11 +8,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const bgScrollableHeight = videoBg.offsetHeight - windowHeight;
     const bgSpeed = bgScrollableHeight / maxScroll;
 
+    const maxDarkness = 0.9; // Максимальная непрозрачность (0-1)
+    const maxBlur = 15; // Максимальное размытие в пикселях
+    const effectEndPoint = 500; // Пиксель скролла, где эффект достигает максимума
+
     document.addEventListener('scroll', function() {
         const scrollPos = window.scrollY;
+
+        // 1. Движение фона (параллакс)
         const bgOffset = Math.min(scrollPos * bgSpeed, bgScrollableHeight);
         videoBg.style.transform = `translateY(${bgOffset}px)`;
-        gradient.style.transform = `translateY(${scrollPos * 0.5}px)`;
+
+        // 2. Затемнение и размытие градиента (без движения)
+        const progress = Math.min(scrollPos / effectEndPoint, 1); // 0-1
+        const darkness = progress * maxDarkness;
+        const blur = progress * maxBlur;
+
+        gradient.style.opacity = darkness;
+        gradient.style.backdropFilter = `blur(${blur}px)`;
+        gradient.style.transform = 'none';
     });
 
     // Параллакс-эффект для текстовых блоков
@@ -74,4 +88,43 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Initialize
   updateCarousel();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const nav = document.querySelector('nav');
+    const headline = document.querySelector('.headline');
+    const inner = document.querySelector('.inner');
+    const gifBackground = document.querySelector('.gif-background');
+    
+    // Sticky nav on scroll
+    window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        const headlineHeight = headline.offsetHeight;
+        
+        // Nav background change
+        if (scrollPosition > headlineHeight * 0.7) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+        
+        // Parallax effect for GIF background
+        const gifOffset = scrollPosition * 0.5;
+        gifBackground.style.transform = `translateY(${gifOffset}px)`;
+        
+        // Fade out header content
+        const opacity = 1 - scrollPosition / (headlineHeight * 0.8);
+        inner.style.opacity = Math.max(0, opacity).toString();
+    });
+    
+    // Mobile menu toggle (optional)
+    const menuToggle = document.createElement('div');
+    menuToggle.className = 'mobile-menu-toggle';
+    menuToggle.innerHTML = '☰';
+    nav.appendChild(menuToggle);
+    
+    menuToggle.addEventListener('click', function() {
+        const ul = nav.querySelector('ul');
+        ul.style.display = ul.style.display === 'flex' ? 'none' : 'flex';
+    });
 });

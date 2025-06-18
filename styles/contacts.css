@@ -1,0 +1,39 @@
+.cyber-contacts {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+}
+  
+.contact-card {
+    background: rgba(0, 20, 40, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid #00ccff;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.3);
+}
+  
+.contact-line {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 1.2em;
+}
+  
+.contact-icon {
+    margin-right: 15px;
+    color: #00ccff;
+    font-size: 1.5em;
+}
+  
+.qr-code {
+    text-align: center;
+    margin-top: 30px;
+}
+  
+.qr-code img {
+    width: 200px;
+    border: 2px solid #00ccff;
+    padding: 10px;
+    background: white;
+}
