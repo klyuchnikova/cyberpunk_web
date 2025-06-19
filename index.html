@@ -6,6 +6,8 @@
     <title>Cyberpunk Site</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/carousel.css">
+    <link rel="stylesheet" href="styles/carousel_card.css">
+    <link rel="stylesheet" href="styles/modal_card.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
@@ -84,49 +86,71 @@
             <button class="carousel-arrow left">‹</button>
             
             <div class="cards">
-                <div class="card active" data-details="Главный архитектор Оракула. Знает тёмную тайну первой версии ИИ.">
-                    <div class="card-content">
-                        <img src="src/images/scientist_1.jpg" alt="Доктор Элиас Роудс">
-                        <h3>Элиас Роудс <span class="role-tag loyalist">Лоялист</span></h3>
-                        <p>"Система работает идеально. Не мешайте процессу."</p>
+                <div class="card active" data-role="loyalist" data-details="Главный архитектор Оракула. Знает тёмную тайну первой версии ИИ.">
+                    <div class="card-header">
+                        <div class="character-photo">
+                            <img src="src/images/scientist_1.jpg" alt="Доктор Элиас Роудс">
+                        </div>
+                        <div class="card-header-slanted-edge"></div>
                     </div>
-                </div>
-
-                <div class="card next" data-details="Разработчица эмоционального модуля. Её прототип вызвал волну суицидов.">
-                    <div class="card-content">
-                        <img src="src/images/scientist_2.jpg" alt="Доктор Лира Векс">
-                        <h3>Лира Векс <span class="role-tag loyalist">Лоялист</span></h3>
-                        <p>"Оракул должен понимать человеческие эмоции!"</p>
+                    <div class="card-body">
+                        <h3 class="character-name">Элиас Роудс</h3>
+                        <p class="character-quote">"Система работает идеально. Не мешайте процессу."</p>
                     </div>
-                </div>
-
-                <div class="card" data-details="Талантливый стажёр, чей брат может случайно активировать протокол 'Оптимизировать всё'.">
-                    <div class="card-content">
-                        <img src="src/images/scientist_3.jpg" alt="Дэнни Кейт">
-                        <h3>Дэнни Кейт <span class="role-tag loyalist">Лоялист</span></h3>
-                        <p>"Я докажу, что достоин быть здесь!"</p>
+                    <div class="character-skills">
+                        <div class="skill">
+                            <div class="skill-name">
+                                <span>Интеллект</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--skill-level: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">
+                                <span>Харизма</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--skill-level: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">
+                                <span>Технологии</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--skill-level: 90%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <button class="carousel-arrow right">›</button>
         </section>
-        
+    </div>
 
-        <!-- Модальное окно -->
-        <div class="modal-overlay">
-            <div class="modal-card neon-border">
-                <button class="close-modal">&times;</button>
-                <img src="" alt="" class="modal-image">
-                <h3 class="modal-title"></h3>
-                <p class="modal-description"></p>
-                <div class="modal-stats">
-                    <p><strong>Роль:</strong> <span class="modal-role"></span></p>
-                    <p><strong>Цель:</strong> <span class="modal-goal"></span></p>
-                    <p><strong>Секрет:</strong> <span class="modal-secret"></span></p>
+    <!-- Модальное окно -->
+    <div class="modal-overlay">
+        <div class="modal-card neon-border">
+            <button class="close-modal">&times;</button>
+            <div class="card-header">
+                <div class="character-photo">
+                    <img src="" alt="" class="modal-image">
                 </div>
-                <button class="select-character">ВЫБРАТЬ ПЕРСОНАЖА</button>
+                <div class="card-header-slanted-edge"></div>
             </div>
+            <div class="card-body">
+                <h3 class="character-name modal-title"></h3>
+                <p class="character-quote modal-description"></p>
+            </div>
+            <div class="character-skills modal-skills">
+                <!-- Skills will be injected here -->
+            </div>
+            <button class="select-character">ВЫБРАТЬ ПЕРСОНАЖА</button>
         </div>
     </div>
 
