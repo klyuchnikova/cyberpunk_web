@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyberpunk Site</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/carousel.css">
     <link rel="stylesheet" href="styles/carousel_card.css">
+    <link rel="stylesheet" href="styles/carousel.css">
     <link rel="stylesheet" href="styles/modal_card.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -86,7 +86,49 @@
             <button class="carousel-arrow left">‹</button>
             
             <div class="cards">
-                <div class="card active" data-role="loyalist" data-details="Главный архитектор Оракула. Знает тёмную тайну первой версии ИИ.">
+                <div class="card" data-role="threat" data-details="Специалист по нейронным сетям. Обнаружила критическую уязвимость в ядре ИИ.">
+                    <div class="card-header">
+                        <div class="character-photo">
+                            <img src="src/images/scientist_2.jpg" alt="Доктор София Чен">
+                        </div>
+                        <div class="card-header-slanted-edge"></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="character-name">София Чен</h3>
+                        <p class="character-quote">"Мы создали монстра, который нужно остановить."</p>
+                    </div>
+                    <div class="character-skills">
+                        <div class="skill">
+                            <div class="skill-name">
+                                <span>Интеллект</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--skill-level: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">
+                                <span>Хакинг</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--skill-level: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">
+                                <span>Технологии</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--skill-level: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-role="loyalist" data-details="Главный архитектор Оракула. Знает тёмную тайну первой версии ИИ.">
                     <div class="card-header">
                         <div class="character-photo">
                             <img src="src/images/scientist_1.jpg" alt="Доктор Элиас Роудс">
@@ -123,6 +165,48 @@
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" style="--skill-level: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-role="neutral" data-details="Ведущий исследователь квантовых вычислений. Ищет способ обойти ограничения системы.">
+                    <div class="card-header">
+                        <div class="character-photo">
+                            <img src="src/images/scientist_3.jpg" alt="Доктор Алекс Новак">
+                        </div>
+                        <div class="card-header-slanted-edge"></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="character-name">Алекс Новак</h3>
+                        <p class="character-quote">"Между хаосом и контролем есть третий путь."</p>
+                    </div>
+                    <div class="character-skills">
+                        <div class="skill">
+                            <div class="skill-name">
+                                <span>Интеллект</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--skill-level: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">
+                                <span>Дипломатия</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--skill-level: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">
+                                <span>Технологии</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--skill-level: 80%"></div>
                             </div>
                         </div>
                     </div>

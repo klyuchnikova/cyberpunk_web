@@ -57,13 +57,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const cards = document.querySelectorAll('.card');
   const leftBtn = document.querySelector('.carousel-arrow.left');
   const rightBtn = document.querySelector('.carousel-arrow.right');
-  let currentIndex = 0;
+  let currentIndex = 1; // Start with middle card active
+  let isTransitioning = false;
 
   // Initialize carousel
-  function updateCarousel() {
+  function updateCarousel(direction = null) {
+    if (isTransitioning) return;
+    isTransitioning = true;
+
     cards.forEach((card, index) => {
       card.classList.remove('active', 'prev', 'next');
-
+      
       if (index === currentIndex) {
         card.classList.add('active');
       } else if (index === (currentIndex - 1 + cards.length) % cards.length) {
@@ -72,18 +76,28 @@ document.addEventListener('DOMContentLoaded', function() {
         card.classList.add('next');
       }
     });
+
+    // Add transition end listener to the active card
+    const activeCard = cards[currentIndex];
+    const transitionEndHandler = () => {
+      isTransitioning = false;
+      activeCard.removeEventListener('transitionend', transitionEndHandler);
+    };
+    activeCard.addEventListener('transitionend', transitionEndHandler);
   }
 
   // Left arrow: Move to previous card
   leftBtn.addEventListener('click', () => {
+    if (isTransitioning) return;
     currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-    updateCarousel();
+    updateCarousel('left');
   });
 
   // Right arrow: Move to next card
   rightBtn.addEventListener('click', () => {
+    if (isTransitioning) return;
     currentIndex = (currentIndex + 1) % cards.length;
-    updateCarousel();
+    updateCarousel('right');
   });
 
   // Initialize
