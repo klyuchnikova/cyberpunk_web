@@ -78,6 +78,16 @@ body {
     position: relative;
     overflow: hidden;
     color: white; /* Белый текст */
+    
+    /* Augmented UI Configuration */
+    --aug-tr: 25px;
+    --aug-bl: 57px;
+    --aug-br: 25px;
+    --aug-br-inset2: 40%;
+    --aug-border-all: 2px;
+    --aug-border-bg: linear-gradient(45deg, #00ccff, #9933ff);
+    --aug-inlay-all: 3px;
+    --aug-inlay-bg: rgba(0, 200, 255, 0.3);
 }
 
 /* Неоновая боковая полоса */
