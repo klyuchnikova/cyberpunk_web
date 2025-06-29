@@ -241,13 +241,59 @@
   justify-content: space-between;
 }
 
+.character-icon {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 60px);
+  width: 120px; /* Approximately 30% of card height (300px card) */
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--neon-color, #00ccff);
+  box-shadow: 
+    0 0 20px var(--neon-glow, rgba(0, 200, 255, 0.7)),
+    inset 0 0 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  z-index: 10; /* Ensure it's above everything */
+  background: rgba(10, 20, 30, 0.9);
+}
+
+.character-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* Ensure the icon has the same neon color as the card theme */
+.card[data-role="loyalist"] .character-icon {
+  border-color: #00ccff;
+  box-shadow: 
+    0 0 20px rgba(0, 200, 255, 0.7),
+    inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.card[data-role="threat"] .character-icon {
+  border-color: #ff3366;
+  box-shadow: 
+    0 0 20px rgba(255, 51, 102, 0.7),
+    inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.card[data-role="neutral"] .character-icon {
+  border-color: #33ff66;
+  box-shadow: 
+    0 0 20px rgba(51, 255, 102, 0.7),
+    inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   .card {
     position: absolute;
     overflow: visible; /* Разрешаем выступание элементов */
     width: 90%;
-    height: 450px; /* Increased from 350px to accommodate all content */
+    height: 400px;
   }
 
   .card-body {
@@ -300,5 +346,12 @@
 
   .character-name {
     font-size: 1.3rem;
+  }
+
+  .character-icon {
+    width: 160px;
+    height: 160px;
+    top: 15px;
+    left: calc(50% - 80px);
   }
 }
