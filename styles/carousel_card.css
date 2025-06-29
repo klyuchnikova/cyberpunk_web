@@ -243,10 +243,10 @@
 
 .character-icon {
   position: absolute;
-  top: 20px;
-  left: calc(50% - 60px);
-  width: 120px; /* Approximately 30% of card height (300px card) */
-  height: 120px;
+  top: 10px;
+  left: calc(50% - 75px);
+  width: 150px; /* Approximately 30% of card height (300px card) */
+  height: 150px;
   border-radius: 50%;
   border: 3px solid var(--neon-color, #00ccff);
   box-shadow: 
@@ -338,10 +338,6 @@
 
   .character-skills {
     margin-top: 0; /* Remove top margin since we have bottom margin on info */
-  }
-
-  .character-photo {
-    /* height: 150px; */
   }
 
   .character-name {
