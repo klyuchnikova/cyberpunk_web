@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap');
 
 .card {
-  position: relative;
-  flex: 0 0 300px;
-  height: 450px;
+  position: absolute;
+  width: 300px;
+  height: 100%;
   left: 0;
   right: 0;
-  margin: 10px auto;
+  margin: auto;
   background: rgba(10, 20, 30, 0.95);
   backdrop-filter: blur(12px);
   border-radius: 10px;
@@ -16,8 +16,13 @@
   overflow: hidden;
   transform: translateX(0) scale(0.8);
   opacity: 0.4;
-  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  background: rgba(10, 20, 30, 0.9);
+  backdrop-filter: blur(12px);
   transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
 }
 
 .card.active {
@@ -57,37 +62,42 @@
   padding: 0;
 }
 
-/* Diagonal Overlay */
 .card-header:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: linear-gradient(to top, rgb(5,85,134), rgba(181,181,181, 0.1));
-  z-index: 1;
+  display: none;
 }
 
-/* Diagonal Cut */
 .card-header-slanted-edge {
   position: absolute;
-  bottom: -3px;
+  bottom: 0;
   left: 0;
   right: 0;
-  height: 100px;
-  background: rgba(10, 20, 30, 0.95);
+  height: 60px; /* Adjust based on your preferred angle */
+  background: rgba(10, 20, 30, 0.95); /* Must match .card-body */
   transform: skewY(-5deg);
-  transform-origin: bottom;
+  transform-origin: bottom left;
   z-index: 2;
+  box-shadow: 
+    0 -2px 5px rgba(0, 200, 255, 0.3), /* Top edge glow */
+    inset 0 0 10px rgba(0, 0, 0, 0.5); /* Inner shadow */
 }
 
-/* Card Body */
 .card-body {
+  background: rgba(10, 20, 30, 0.95); /* Must match diagonal */
+  margin-top: -80px;
+  padding: 10px 0px 80px; /* Remove bottom padding, skills will have it */
   text-align: center;
-  padding: 20px 10px 0 10px;
-  z-index: 3;
   position: relative;
+  z-index: 3;
+  border-radius: 0 0 10px 10px; /* Only round bottom corners */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: calc(100% - 220px - 60px);
+}
+
+.card-header {
+  overflow: visible; /* Allow diagonal to extend beyond */
+  margin-bottom: 40px; /* Space for diagonal */
 }
 
 .character-name {
@@ -97,8 +107,14 @@
   text-transform: uppercase;
   color: var(--neon-color, #00ccff);
   text-shadow: 0 0 10px var(--neon-glow, rgba(0, 200, 255, 0.7));
-  margin: 0 auto;
+  margin-bottom: 10px;
   letter-spacing: 1px;
+  font-size: 1.5rem;
+}
+
+.character-info {
+  padding-bottom: 80px;
+  margin-top: auto;
 }
 
 .role-tag {
@@ -117,10 +133,11 @@
 
 .character-quote {
   font-family: 'Rajdhani', 'Exo 2', sans-serif;
-  font-size: 14px;
+  font-style: italic;
+  font-size: 0.9rem;
   font-weight: 300;
   color: #a0a0a0;
-  margin: 10px auto 0 auto;
+  margin: 5px auto 0px auto;
   line-height: 1.4;
 }
 
@@ -131,10 +148,12 @@
   right: 20px;
   bottom: 20px;
   z-index: 4;
+  height: auto;
+  padding-bottom: 10px;
 }
 
 .skill {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   opacity: 0;
   transform: translateX(-20px);
   transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -215,28 +234,71 @@
   --neon-glow: rgba(51, 255, 102, 0.7);
 }
 
-/* Mobile Adjustments */
+.text-container {
+  min-height: 80px; /* Минимальная высота для текста */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
   .card {
-    width: 280px;
-    height: 400px;
+    position: absolute;
+    overflow: visible; /* Разрешаем выступание элементов */
+    width: 90%;
+    height: 350px;
   }
-  
-  .card-header {
-    height: 180px;
+
+  .card-body {
+    min-height: calc(100% - 150px - 40px);
   }
-  
-  .character-name {
-    font-size: 16px;
+
+  .stats-overlay {
+    position: relative; /* Меняем на относительное позиционирование */
+    height: auto; /* Автоматическая высота */
+    padding: 15px;
+    clip-path: none; /* Убираем старую диагональ */
+    background: rgba(0, 0, 0, 0.9);
+    margin-top: -10px; /* Поднимаем блок ближе к фото */
+    
+    /* Новая диагональ с псевдоэлементом */
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: linear-gradient(
+        to bottom right,
+        transparent 0%,
+        transparent 50%,
+        rgba(0, 0, 0, 0.9) 50%,
+        rgba(0, 0, 0, 0.9) 100%
+      );
+      transform: skewY(-10deg);
+      transform-origin: top left;
+      z-index: -1;
+    }
   }
-  
-  .character-quote {
-    font-size: 12px;
+
+  .character-info {
+    margin-top: auto;
+    padding: 10px;
+    padding-bottom: 60px;
   }
-  
+
   .character-skills {
-    left: 10px;
-    right: 10px;
+    margin-top: 10px;
     bottom: 10px;
+  }
+
+  .character-photo {
+    /* height: 150px; */
+  }
+
+  .character-name {
+    font-size: 1.3rem;
   }
 }

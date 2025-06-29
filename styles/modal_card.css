@@ -18,16 +18,17 @@
 
 .modal-card {
     position: relative;
-    width: 315px;
-    height: 450px;
-    background: rgba(10, 20, 30, 0.95);
-    border-radius: 10px;
+    background: rgba(0, 10, 30, 0.95);
+    width: 50%;
+    max-width: 600px;
+    min-height: 50vh;
     border: 1px solid var(--neon-color, #00ccff);
     box-shadow: 0 0 30px var(--neon-glow, rgba(0, 200, 255, 0.6));
-    overflow: hidden;
     margin: auto;
     padding: 0;
-    /* Remove flexbox and extra padding */
+    border-radius: 15px;
+    animation: scaleUp 0.4s ease;
+    overflow: hidden;
 }
 
 .card-header {
@@ -35,25 +36,6 @@
     height: 220px;
     width: 100%;
     overflow: hidden;
-    margin: 0;
-    padding: 0;
-}
-
-.character-photo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.character-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0;
     margin: 0;
     padding: 0;
 }
@@ -69,13 +51,6 @@
     transform-origin: bottom;
     box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.3);
     z-index: 2;
-}
-
-.card-body {
-    position: relative;
-    padding: 20px;
-    text-align: center;
-    z-index: 3;
 }
 
 .character-name {
@@ -201,5 +176,29 @@
         bottom: 15px;
         left: 15px;
         right: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-card {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .modal-header {
+        flex-direction: column;
+    }
+    
+    .character-gif, .character-art {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .modal-title {
+        font-size: 1.5rem;
+    }
+    
+    .modal-stats {
+        grid-template-columns: 1fr;
     }
 }
