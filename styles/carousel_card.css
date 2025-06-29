@@ -37,9 +37,10 @@
   width: 100%;
   background-size: cover;
   background-position: top;
-  overflow: hidden;
+  overflow: visible; /* Allow image to extend beyond header */
   padding: 0;
   margin: 0;
+  border-radius: 10px 10px 0 0; /* Round top corners to match card */
 }
 
 .character-photo {
@@ -51,6 +52,7 @@
   margin: 0;
   padding: 0;
   transform: translateY(0);
+  border-radius: 10px 10px 0 0; /* Round top corners to match card */
 }
 
 .character-photo img {
@@ -58,46 +60,45 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center; /* Ensure top of image is visible */
   margin: 0;
   padding: 0;
+  border-radius: 10px 10px 0 0; /* Round top corners to match card */
 }
 
 .card-header:after {
   display: none;
 }
 
-.card-header-slanted-edge {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px; /* Adjust based on your preferred angle */
-  background: rgba(10, 20, 30, 0.95); /* Must match .card-body */
-  transform: skewY(-5deg);
-  transform-origin: bottom left;
-  z-index: 2;
-  box-shadow: 
-    0 -2px 5px rgba(0, 200, 255, 0.3), /* Top edge glow */
-    inset 0 0 10px rgba(0, 0, 0, 0.5); /* Inner shadow */
-}
-
 .card-body {
-  background: rgba(10, 20, 30, 0.95); /* Must match diagonal */
-  margin-top: -80px;
-  padding: 10px 0px 80px; /* Remove bottom padding, skills will have it */
+  background: rgba(10, 20, 30, 0.95);
+  margin-top: -40px; /* Small overlap to create merge effect */
+  padding: 50px 20px 20px; /* Top padding to account for diagonal */
   text-align: center;
   position: relative;
   z-index: 3;
-  border-radius: 0 0 10px 10px; /* Only round bottom corners */
+  border-radius: 0 0 10px 10px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  min-height: calc(100% - 220px - 60px);
+  min-height: calc(100% - 220px + 40px); /* Adjusted for new structure */
 }
 
-.card-header {
-  overflow: visible; /* Allow diagonal to extend beyond */
-  margin-bottom: 40px; /* Space for diagonal */
+/* Diagonal overlay as part of card-body */
+.card-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: rgba(10, 20, 30, 0.95);
+  transform: skewY(-5deg);
+  transform-origin: top left;
+  z-index: -1;
+  box-shadow: 
+    0 -2px 5px rgba(0, 200, 255, 0.3),
+    inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .character-name {
@@ -113,13 +114,14 @@
 }
 
 .character-info {
-  padding-bottom: 80px;
+  /* Remove padding-bottom, let it flow naturally */
   margin-top: auto;
+  margin-bottom: auto; /* Space between info and skills */
 }
 
 .role-tag {
   display: inline-block;
-  padding: 5px 15px;
+  padding: 5px 10px;
   margin: 10px 0;
   font-family: 'Exo 2', sans-serif;
   font-weight: 300;
@@ -143,10 +145,8 @@
 
 /* Skills Section */
 .character-skills {
-  position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
+  /* Remove absolute positioning - let it flow naturally */
+  position: relative;
   z-index: 4;
   height: auto;
   padding-bottom: 10px;
@@ -247,11 +247,12 @@
     position: absolute;
     overflow: visible; /* Разрешаем выступание элементов */
     width: 90%;
-    height: 350px;
+    height: 450px; /* Increased from 350px to accommodate all content */
   }
 
   .card-body {
     min-height: calc(100% - 150px - 40px);
+    padding: 10px 15px 15px; /* Adjusted padding for mobile */
   }
 
   .stats-overlay {
@@ -285,13 +286,12 @@
 
   .character-info {
     margin-top: auto;
-    padding: 10px;
-    padding-bottom: 60px;
+    padding: 10px 0;
+    margin-bottom: 15px; /* Space between info and skills */
   }
 
   .character-skills {
-    margin-top: 10px;
-    bottom: 10px;
+    margin-top: 0; /* Remove top margin since we have bottom margin on info */
   }
 
   .character-photo {
