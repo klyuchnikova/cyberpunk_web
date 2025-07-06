@@ -130,15 +130,4 @@ document.addEventListener('DOMContentLoaded', function() {
         const opacity = 1 - scrollPosition / (headlineHeight * 0.8);
         inner.style.opacity = Math.max(0, opacity).toString();
     });
-    
-    // Mobile menu toggle (optional)
-    const menuToggle = document.createElement('div');
-    menuToggle.className = 'mobile-menu-toggle';
-    menuToggle.innerHTML = '☰';
-    nav.appendChild(menuToggle);
-    
-    menuToggle.addEventListener('click', function() {
-        const ul = nav.querySelector('ul');
-        ul.style.display = ul.style.display === 'flex' ? 'none' : 'flex';
-    });
 });

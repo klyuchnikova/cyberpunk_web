@@ -5,12 +5,14 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
+    padding: 15px 20px;
     z-index: 100;
     background: rgba(0, 0, 20, 0.7);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 200, 255, 0.3);
     transition: all 0.3s ease;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 nav::before {
@@ -30,7 +32,7 @@ nav::before {
 
 nav.scrolled {
     background: rgba(0, 0, 30, 0.95);
-    padding: 10px 5%;
+    padding: 10px 20px;
 }
 
 .logo {
@@ -161,8 +163,10 @@ nav a:hover::after {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     nav {
-        padding: 10px 5%;
+        padding: 10px 20px;
         justify-content: space-between;
+        box-sizing: border-box;
+        position: relative;
     }
     
     /* Hide desktop menu on mobile */
@@ -180,9 +184,18 @@ nav a:hover::after {
         transition: right 0.3s ease;
         border-left: 1px solid rgba(0, 200, 255, 0.3);
         margin: 0;
-        padding: 0 0 0 30px;
+        padding: 0 0 0 20px;
+        box-sizing: border-box;
+    }
+
+    nav ul {
+        display: none;
     }
     
+    nav ul.active {
+        display: flex;
+    }
+
     nav ul.active {
         right: 0;
     }
@@ -216,9 +229,21 @@ nav a:hover::after {
     
     /* Show hamburger on mobile */
     .hamburger {
+        flex-direction: column;
+        cursor: pointer;
+        padding: 5px;
+        z-index: 101;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
         display: flex;
+        opacity: 1;
+        visibility: visible;
     }
-    
+
+    nav::-webkit-details-marker,
+
     /* Hamburger animation */
     .hamburger.active span:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
@@ -243,17 +268,19 @@ nav a:hover::after {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.5);
     z-index: 99;
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
 .menu-overlay.active {
     display: block;
     opacity: 1;
+    pointer-events: auto;
 }
 
 @keyframes fade-in {
