@@ -38,3 +38,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Enhanced parallax effect
+document.addEventListener('DOMContentLoaded', function() {
+    const bgTiles = document.querySelector('.news-bg-tiles');
+    const newsGrid = document.querySelector('.news-grid');
+    
+    window.addEventListener('scroll', function() {
+        const scrollY = window.scrollY;
+        // Subtle parallax effect (adjust 0.3 for stronger/weaker effect)
+        bgTiles.style.transform = `translateY(${-scrollY * 0.02}px)`;
+        
+        // Content lift effect
+        newsGrid.style.transform = `translateZ(20px)`;
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const img1 = new Image();
+    const img2 = new Image();
+    
+    img1.src = '../src/images/news_background_mobile.jpeg';
+    img2.src = '../src/images/news_background_mobile_flip.jpeg';
+    
+    img1.onload = img2.onload = function() {
+        console.log('Images loaded. Heights:', img1.height, img2.height);
+        // If heights differ, adjust background-position in CSS
+    };
+});
