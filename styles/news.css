@@ -25,7 +25,7 @@ body {
     background-size: 100% auto;
     background-repeat: repeat-y;
     background-position: 0 0, 0 50%; /* Stagger the two images */
-    animation: bgScroll 80s linear infinite;
+    animation: bgScroll 200s linear infinite;
     /* Light glass effect */
     backdrop-filter: blur(1px);
     -webkit-backdrop-filter: blur(1px);
@@ -84,7 +84,7 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 0 30px 30px;
+    padding: 0 30px 15px;
     box-sizing: border-box;
 }
 
@@ -93,6 +93,16 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     height: 100%;
+    gap: 5px;
+}
+
+.floating-text {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+    text-align: left;
+    font-weight: 700;
 }
 
 .news-image {
@@ -110,18 +120,9 @@ body {
     object-fit: cover;
 }
 
-.floating-text {
-    font-family: 'Orbitron', sans-serif;
-    text-transform: uppercase;
-    color: white;
-    margin: 0;
-    text-align: left;
-    font-weight: 700;
-}
-
 .square-flip h2 {
     font-size: 2rem;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     letter-spacing: 1px;
 
     visibility: visible;
@@ -141,7 +142,7 @@ body {
 .square-flip h3 {
     font-size: 1.2rem;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-weight: 400;
     opacity: 0.9;
 
@@ -163,8 +164,8 @@ body {
 .bottom-controls {
     background: black;
     border-radius: 12px 12px 0 0;
-    padding: 15px 20px;
-    margin-top: auto;
+    padding: 12px 15px;
+    margin-top: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -174,16 +175,73 @@ body {
 .reactions {
     display: flex;
     gap: 15px;
-    margin-right: auto; /* Pushes everything right of it to the end */
+    margin-right: auto;
+    align-items: center;
 }
 
 .reaction {
+    position: relative;
     color: white;
     font-family: 'Rajdhani', sans-serif;
     font-size: 14px;
     display: flex;
     align-items: center;
     gap: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Custom icon styling */
+.reaction-icon {
+    width: 24px; /* Scaled down from 48px */
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 2px var(--cyan));
+}
+
+/* Specific icon classes */
+.reaction-like .reaction-icon {
+    background-image: url('../src/icons/icons8-facebook-like-48.png');
+}
+
+.reaction-heart .reaction-icon {
+    background-image: url('../src/icons/icons8-pixel-heart-48.png');
+}
+
+/* Hover effects */
+.reaction:hover {
+    text-shadow: 0 0 5px var(--yellow);
+}
+
+.reaction:hover .reaction-icon {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 5px var(--red)) brightness(1.2);
+}
+
+/* Active/pressed effect */
+.reaction:active .reaction-icon {
+    transform: scale(0.9);
+}
+
+/* Counter styling */
+.reaction-count {
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+/* Cyberpunk pulse animation for active reactions */
+.reaction.active {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { filter: drop-shadow(0 0 2px var(--cyan)); }
+    50% { filter: drop-shadow(0 0 8px var(--yellow)); }
+    100% { filter: drop-shadow(0 0 2px var(--cyan)); }
 }
 
 /* Button Styles - Transparent Cyberpunk Version */
@@ -259,6 +317,116 @@ body {
     100% { fill: white; }
 }
 
+.glass-banner {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.2); /* Dark semi-transparent background */
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: "Oxanium", monospace; /* Monospace for code style */
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    filter: contrast(1.2); /* Sharper text */
+}
+
+.glass-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 165, 0, 0.2) 50%, 
+        transparent 100%);
+    animation: glass-glow 4s infinite;
+}
+
+.glass-banner-content {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    transform: skewX(-10deg); /* Tilted content */
+    animation: scroll-banner 15s linear infinite;
+}
+
+.glass-banner:hover .glass-banner-content {
+    animation-duration: 10s;
+}
+
+.glass-banner-text {
+    color: rgba(255, 255, 255, 0.9);
+    transform: skewX(10deg); /* Counter-skew for text to appear straight */
+    padding: 0 20px;
+    font-family: Oxanium !important; /* Stronger code style */
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+.glass-banner-parallelogram {
+    width: 25px;
+    height: 35px;
+    margin: 0 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: skewX(-20deg);
+    position: relative;
+    box-shadow: 
+        0 0 5px rgba(255, 165, 0, 0.9),
+        0 0 15px rgba(255, 165, 0, 0.7),
+        0 0 25px rgba(255, 165, 0, 0.5);
+    filter: brightness(1.1);
+}
+
+.glass-banner-parallelogram::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid rgba(255, 165, 0, 0.8);
+    transform: skewX(-20deg);
+    z-index: -1;
+    filter: blur(2px);
+}
+
+@keyframes scroll-banner {
+    0% {
+        transform: skewX(-10deg) translateX(0);
+    }
+    100% {
+        transform: skewX(-10deg) translateX(-50%); /* Move by half the content width */
+    }
+}
+
+@keyframes glass-glow {
+    0%, 100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* For seamless looping - duplicate content in HTML */
+.glass-banner-content-wrapper {
+    display: flex;
+}
+
+.glass-banner-original, .glass-banner-duplicate {
+    display: flex;
+    align-items: center;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .square-flip {
@@ -274,20 +442,22 @@ body {
     }
     
     .square-container {
-        padding: 0 20px 20px;
+        padding: 0 20px 10px;
     }
     
     .square-flip h2 {
         font-size: 1.5rem;
+        margin-bottom: 3px;
     }
     
     .square-flip h3 {
         font-size: 1rem;
+        margin-bottom: 8px;
     }
     
     .bottom-controls {
-        padding: 12px 15px;
-        margin-top: 15px;
+        padding: 10px 15px;
+        margin-top: 3px;
     }
 
     .read-more-btn {

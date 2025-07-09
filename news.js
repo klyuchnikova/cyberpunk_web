@@ -46,9 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', function() {
         const scrollY = window.scrollY;
-        // Subtle parallax effect (adjust 0.3 for stronger/weaker effect)
-        bgTiles.style.transform = `translateY(${-scrollY * 0.02}px)`;
-        
+        // Subtle parallax effect (adjust 0.01 for stronger/weaker effect)
+        bgTiles.style.transform = `translateY(${-scrollY * 0.01}px)`;
         // Content lift effect
         newsGrid.style.transform = `translateZ(20px)`;
     });
