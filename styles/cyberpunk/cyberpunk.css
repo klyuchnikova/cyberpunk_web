@@ -27,6 +27,14 @@
     font-family: Cyberpunk;
     src: url(../../fonts/Cyberpunk.otf) format('opentype');
 }
+
+@font-face 
+{
+    font-family: PixelArt;
+    font-style: normal;
+    font-weight: 400;
+    src: url(../../fonts/visitor2.otf) format('woff2');
+}
 /*#endregion*/
 
 /*#region top level elements*/

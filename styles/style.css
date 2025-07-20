@@ -1,15 +1,18 @@
 /* Общие стили */
+/* Add this to your style.css */
 html {
-    scroll-behavior: smooth;
+    height: 100%;
 }
 
 body {
+    background: black;
+    min-height: 100vh;
+    position: relative;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     color: white;
     overflow-x: hidden;
-    height: 100vh;
 }
 
 /* Видео/GIF фон */
@@ -21,6 +24,7 @@ body {
     height: 100vh;
     z-index: -2;
     overflow: hidden;
+    display: block;
 }
 
 .video-background img,
@@ -29,6 +33,7 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    display: block;
 }
 
 /* Градиент с размытием */

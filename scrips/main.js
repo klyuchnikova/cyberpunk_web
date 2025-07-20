@@ -29,6 +29,25 @@ document.addEventListener('DOMContentLoaded', function() {
         gradient.style.transform = 'none';
     });
 
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop < 0) {
+            window.scrollTo(0, 0);
+        }
+        
+        if (scrollTop <= 0) {
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                document.body.style.overflow = '';
+            }, 100);
+        }
+        
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+    window.scrollTo(0, 0);
+
     // Параллакс-эффект для текстовых блоков
     const textBlocks = document.querySelectorAll('.text-block');
     const triggerZone = 0.6;
@@ -77,7 +96,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    // Add transition end listener to the active card
     const activeCard = cards[currentIndex];
     const transitionEndHandler = () => {
       isTransitioning = false;

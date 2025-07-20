@@ -23,7 +23,7 @@
     <!-- Sticky Navigation -->
     <nav class="cyber-razor-bottom-fixed">
         <div class="logo">
-            <div class="cyberpunk-font-og fg-cyan">CYBERPUNK</div>
+            <div class="cyberpunk-font-og fg-white">CYBERPUNK</div>
         </div>
         <div class="hamburger">
             <span></span>
@@ -49,7 +49,7 @@
 
     <div class="news-grid">
         <div class="square-flip">
-            <div class="square">
+            <div class="square-front">
                 <div class="news-image">
                     <img src="src/images/city_main.jpg" alt="News Background">
                 </div>
@@ -84,6 +84,19 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Back face -->
+            <div class="square-back">
+                <div class="back-content">
+                    <p>Your detailed text content goes here. This will appear when the card flips. Your detailed text content goes here. This will appear when the card flips. Your detailed text content goes here. This will appear when the card flips. Your detailed text content goes here. This will appear when the card flips. Your detailed text content goes here. This will appear when the card flips.</p>
+                    <p>More content can be added in paragraphs.</p>
+                    <p>You can include whatever information you want on the back.</p>
+                </div>
+                <button class="flip-back-btn">
+                    <span>BACK</span>
+                    <span>←</span>
+                </button>
+            </div>
         </div>
     </div>
 
@@ -110,18 +123,24 @@
 
     <div class="news-grid">
         <div class="square-flip">
-            <div class="square">
+            <div class="square-front">
                 <div class="news-image">
                     <img src="src/images/city_main.jpg" alt="News Background">
                 </div>
                 <div class="square-container">
                     <div class="news-content">
-                        <h2 class="floating-text">A LONGER HEADLINE</h2>
-                        <h3 class="floating-text">Subheading text goes here Subheading text goes here Subheading text goes here Subheading text goes here</h3>
+                        <h2 class="floating-text">HEADLINE</h2>
+                        <h3 class="floating-text">Subheading text goes here</h3>
                         <div class="bottom-controls">
                             <div class="reactions">
-                                <span class="reaction">👍 142</span>
-                                <span class="reaction">👎 8</span>
+                                <div class="reaction reaction-like">
+                                    <div class="reaction-icon"></div>
+                                    <span class="reaction-count">42</span>
+                                </div>
+                                <div class="reaction reaction-heart">
+                                    <div class="reaction-icon"></div>
+                                    <span class="reaction-count">24</span>
+                                </div>
                             </div>
                             <button class="read-more-btn">
                                 <span>READ MORE</span>
@@ -139,11 +158,24 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Back face -->
+            <div class="square-back">
+                <div class="back-content">
+                    <p>Your detailed text content goes here. This will appear when the card flips.</p>
+                    <p>More content can be added in paragraphs.</p>
+                    <p>You can include whatever information you want on the back.</p>
+                </div>
+                <button class="flip-back-btn">
+                    <span>BACK</span>
+                    <span>←</span>
+                </button>
+            </div>
         </div>
     </div>
 
 
-    <script src="news.js"></script>
-    <script src="mobile-menu.js"></script>
+    <script src="scrips/news.js"></script>
+    <script src="scrips/mobile-menu.js"></script>
 </body>
 </html>

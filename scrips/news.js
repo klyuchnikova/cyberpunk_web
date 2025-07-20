@@ -1,21 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Flip card functionality
     const flipCards = document.querySelectorAll('.square-flip');
-    
+
     flipCards.forEach(card => {
         const readMoreBtn = card.querySelector('.read-more-btn');
         const flipBackBtn = card.querySelector('.flip-back-btn');
         
-        readMoreBtn.addEventListener('click', () => {
+        readMoreBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             card.classList.add('flipped');
         });
         
-        flipBackBtn.addEventListener('click', () => {
+        flipBackBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             card.classList.remove('flipped');
+        });
+        
+        card.addEventListener('click', (e) => {
+            if (card.classList.contains('flipped')) {
+                card.classList.remove('flipped');
+            }
         });
     });
 
-    // Reaction system
     document.querySelectorAll('.reaction').forEach(reaction => {
         reaction.addEventListener('click', function() {
             if(!this.dataset.clicked) {
@@ -64,4 +71,47 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Images loaded. Heights:', img1.height, img2.height);
         // If heights differ, adjust background-position in CSS
     };
+});
+
+// Replace your existing glass-banner code in news.js with this:
+document.addEventListener('DOMContentLoaded', function() {
+    const banner = document.querySelector('.glass-banner');
+    const content = banner.querySelector('.glass-banner-content');
+    const originalContent = content.innerHTML;
+    
+    // Duplicate content for seamless looping
+    content.innerHTML = originalContent + originalContent;
+    
+    // Get the total width of the original content
+    const contentWidth = content.scrollWidth / 2;
+    
+    // Animation function
+    function animateBanner() {
+        // Reset position when halfway through
+        if (content.style.transform === `translateX(-${contentWidth}px)`) {
+            content.style.transition = 'none';
+            content.style.transform = 'translateX(0)';
+            // Force reflow
+            void content.offsetWidth;
+        }
+        
+        // Animate to the left
+        content.style.transition = `transform ${contentWidth/50}s linear`;
+        content.style.transform = `translateX(-${contentWidth}px)`;
+    }
+    
+    // Start animation
+    animateBanner();
+    
+    // Continue animation after each loop
+    content.addEventListener('transitionend', animateBanner);
+    
+    // Pause on hover
+    banner.addEventListener('mouseenter', () => {
+        content.style.transition = 'none';
+    });
+    
+    banner.addEventListener('mouseleave', () => {
+        animateBanner();
+    });
 });
