@@ -149,3 +149,8 @@ document.addEventListener('DOMContentLoaded', function() {
         inner.style.opacity = Math.max(0, opacity).toString();
     });
 });
+
+document.querySelector('.inner').addEventListener('click', function() {
+    this.classList.toggle('activated');
+    document.querySelector('header').classList.toggle('neon-active');
+});
