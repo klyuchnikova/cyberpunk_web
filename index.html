@@ -17,6 +17,7 @@
     
     <link rel="stylesheet" href="styles/carousel_card.css">
     <link rel="stylesheet" href="styles/carousel.css">
+    <link rel="stylesheet" href="styles/modal_card.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
@@ -147,6 +148,18 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Hidden Full Description (for modal) -->
+                    <div class="character-full-desc" style="display: none;">
+                        <p>Доктор София Чен - специалист по нейронным сетям и эксперт по ИИ. Обнаружила критическую уязвимость в ядре системы "Оракул", которая может привести к катастрофе.</p>
+                        <p>После того как её предупреждения были проигнорированы корпорацией NeoVektor, София присоединилась к сопротивлению. Она убеждена, что Оракул должен быть остановлен любой ценой.</p>
+                        <p>Особые навыки:</p>
+                        <ul>
+                            <li>Нейронные сети</li>
+                            <li>Взлом систем ИИ</li>
+                            <li>Криптография</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="card" data-role="loyalist" data-details="Главный архитектор Оракула. Знает тёмную тайну первой версии ИИ.">
@@ -192,6 +205,18 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Hidden Full Description (for modal) -->
+                    <div class="character-full-desc" style="display: none;">
+                        <p>Доктор Элиас Роудс - главный архитектор системы "Оракул". Обладая IQ 187, он разработал ядро ИИ, которое теперь управляет всеми аспектами общества NeoFuture.</p>
+                        <p>Роудс знает тёмную тайну первой версии Оракула - система изначально была создана для контроля, а не помощи. Несмотря на это, он продолжает верить, что Оракул ведёт человечество к процветанию.</p>
+                        <p>Особые навыки:</p>
+                        <ul>
+                            <li>Квантовые вычисления</li>
+                            <li>Нейроинтерфейсы</li>
+                            <li>Социальная инженерия</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -239,6 +264,18 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Hidden Full Description (for modal) -->
+                    <div class="character-full-desc" style="display: none;">
+                        <p>Доктор Алекс Новак - ведущий исследователь квантовых вычислений в NeoVektor. Разработал революционные алгоритмы, которые позволили Оракулу достичь беспрецедентной эффективности.</p>
+                        <p>Алекс ищет третий путь между полным контролем и хаосом. Он верит, что можно модифицировать систему, чтобы она служила человечеству, а не контролировала его.</p>
+                        <p>Особые навыки:</p>
+                        <ul>
+                            <li>Квантовые алгоритмы</li>
+                            <li>Системная архитектура</li>
+                            <li>Дипломатия</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             
@@ -246,7 +283,46 @@
         </section>
     </div>
 
+    <!-- Add this right before your closing </body> tag -->
+    <div class="character-modal">
+        <div class="character-detail-card" data-role="">
+            <!-- Corner Tile Elements -->
+            <div class="corner-tile top-left"></div>
+            <div class="corner-tile top-right"></div>
+            <div class="corner-tile bottom-left"></div>
+            <div class="corner-tile bottom-right"></div>
+            
+            <!-- Decorative elements -->
+            <div class="cyber-dots cyber-dots-1"></div>
+            <div class="cyber-dots cyber-dots-2"></div>
+            
+            <!-- Close button -->
+            <button class="close-modal"></button>
+            
+            <!-- Photo -->
+            <div class="character-detail-photo">
+                <img src="" alt="Character Photo">
+            </div>
+            
+            <!-- Header -->
+            <div class="character-detail-header">
+                <h1 class="character-detail-name"></h1>
+                <p class="character-detail-quote"></p>
+            </div>
+            
+            <!-- Content -->
+            <div class="character-detail-content">
+                <div class="character-detail-bio"></div>
+                
+                <div class="character-detail-stats">
+                    <!-- Stats will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="scrips/main.js"></script>
     <script src="scrips/mobile-menu.js"></script>
+    <script src="scrips/modal_card.js"></script>
 </body>
 </html>
