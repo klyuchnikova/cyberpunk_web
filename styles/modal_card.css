@@ -23,9 +23,7 @@
 /* SVG Corner Tile Class - Each corner uses a different tile */
 .corner-tile {
     position: absolute;
-    width: 40px;
-    height: 40px;
-    background-size: auto 100%; /* preserves SVG aspect ratio */
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     filter: drop-shadow(0 0 8px var(--neon-color, #00ccff));
@@ -33,31 +31,41 @@
     pointer-events: none;
 }
 
+/* Now each corner defines its own size */
 .corner-tile.top-left {
     top: 15px;
     left: 15px;
-    background-image: url('../src/images/🚀tile1.svg');
+    width: 60px;
+    height: 60px;
+    rotate: 90deg;
+    background-image: url('../src/images/🚀tile3.svg');
 }
 
 .corner-tile.top-right {
     top: 15px;
     right: 15px;
+    width: 50px;
+    height: 35px;
     background-image: url('../src/images/🚀tile2.svg');
 }
 
 .corner-tile.bottom-left {
-    bottom: 15px;
+    bottom: 20px;
     left: 15px;
-    width: 40px;
-    height: auto;
-    background-image: url('../src/images/🚀tile3.svg');
+    width: 30px;
+    height: 30px;
+    background-image: url('../src/images/🚀tile1.svg');
 }
 
 .corner-tile.bottom-right {
-    bottom: 15px;
-    right: 15px;
+    bottom: 10px;
+    right: 5px;
+    width: 40px;
+    height: 60px;
+    rotate: -90deg;
     background-image: url('../src/images/🚀tile4.svg');
 }
+
 
 .character-detail-card {
     position: relative;
@@ -427,13 +435,13 @@
     }
 
     .corner-tile.bottom-left {
-        bottom: 8px;
-        left: 8px;
+        bottom: 12px;
+        left: 4px;
     }
 
     .corner-tile.bottom-right {
-        bottom: 8px;
-        right: 8px;
+        bottom: 3px;
+        right: 4px;
     }
 
     .character-detail-photo {
