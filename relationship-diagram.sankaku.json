@@ -1,0 +1,550 @@
+{
+  "title": "",
+  "subtitle": "",
+  "showTitleOnCanvas": false,
+  "bgPattern": "bg-dots",
+  "bgColor": "#FFF7EC",
+  "nodes": [
+    {
+      "id": "n_vlh4h6",
+      "x": 506.4471676859023,
+      "y": 338.7236397759649,
+      "name": "Светлана",
+      "color": "#B5D9F2",
+      "emoji": "🧛",
+      "image": null,
+      "shape": "circle",
+      "subtitle": "Main/Science"
+    },
+    {
+      "id": "n_tcs1on",
+      "x": 307.26675844364905,
+      "y": 69.28270721607582,
+      "name": "Нора",
+      "color": "#FFD3A8",
+      "emoji": "🧚",
+      "image": null,
+      "shape": "circle",
+      "subtitle": "Science"
+    },
+    {
+      "id": "n_31vtxd",
+      "x": 677.2784850054318,
+      "y": 68.68305411509976,
+      "name": "Дэн",
+      "color": "#FFE8A3",
+      "emoji": null,
+      "image": null,
+      "shape": "square"
+    },
+    {
+      "id": "n_ji5smy",
+      "x": 208.76903937137246,
+      "y": 593.3708572236221,
+      "name": "Айзек",
+      "color": "#C7EFC0",
+      "emoji": "🥷",
+      "image": null,
+      "shape": "circle"
+    },
+    {
+      "id": "n_s73cq0",
+      "x": 927.3998034868238,
+      "y": 508.3126257483334,
+      "name": "Арчибальд",
+      "color": "#FFE8A3",
+      "emoji": null,
+      "image": null,
+      "shape": "circle"
+    },
+    {
+      "id": "n_oywpik",
+      "x": 775.5170851765814,
+      "y": 1240.9162212067342,
+      "name": "RedMoon",
+      "color": "#e70835",
+      "emoji": "🎀",
+      "image": null,
+      "shape": "circle"
+    },
+    {
+      "id": "n_spevk7",
+      "x": 479.8560709152932,
+      "y": 944.1630530783117,
+      "name": "Себастьян [тех]",
+      "color": "#ff2929",
+      "emoji": "🦊",
+      "image": null,
+      "shape": "square"
+    },
+    {
+      "id": "n_c60zwq",
+      "x": 364.339931097469,
+      "y": 1145.818262834393,
+      "name": "Перри",
+      "color": "#c2bdbd",
+      "emoji": null,
+      "image": null,
+      "shape": "square"
+    },
+    {
+      "id": "n_bo2t83",
+      "x": -150.0739704621981,
+      "y": 1290.7377231515245,
+      "name": "Эрика",
+      "color": "#E8BCE8",
+      "emoji": null,
+      "image": null,
+      "shape": "square"
+    },
+    {
+      "id": "n_22o69c",
+      "x": -263.9340951853551,
+      "y": 198.30943205614489,
+      "name": "Коннор",
+      "color": "#B5D9F2",
+      "emoji": "🎮",
+      "image": null,
+      "shape": "circle"
+    },
+    {
+      "id": "n_welrga",
+      "x": -701.397632759175,
+      "y": 334.6871008176421,
+      "name": "Айда Шен",
+      "color": "#FFD3A8",
+      "emoji": "🐶",
+      "image": null,
+      "shape": "circle"
+    },
+    {
+      "id": "n_qdc6yb",
+      "x": -392.0779090540786,
+      "y": 677.9970662947835,
+      "name": "Марк Вейл",
+      "color": "#A8E0D1",
+      "emoji": "🧛",
+      "image": null,
+      "shape": "circle"
+    },
+    {
+      "id": "n_i4d6mm",
+      "x": 652.4056207221844,
+      "y": 840.5047231012364,
+      "name": "Алиса [мастер]",
+      "color": "#FFFFFF",
+      "emoji": null,
+      "image": null,
+      "shape": "square"
+    },
+    {
+      "id": "n_mcohg3",
+      "x": 966.2742955310572,
+      "y": 1003.7605758169369,
+      "name": "Хиппи",
+      "color": "#C7EFC0",
+      "emoji": "🧃",
+      "image": null,
+      "shape": "square"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_rlqoi7",
+      "from": "n_ji5smy",
+      "to": "n_tcs1on",
+      "relation": "dislike",
+      "style": "oneway",
+      "color": "#7a6a7a",
+      "label": "Dislike",
+      "stamp": "💢"
+    },
+    {
+      "id": "e_w550af",
+      "from": "n_ji5smy",
+      "to": "n_vlh4h6",
+      "relation": "dislike",
+      "style": "oneway",
+      "color": "#7a6a7a",
+      "label": "Dislike",
+      "stamp": "💢"
+    },
+    {
+      "id": "e_1fdw5r",
+      "from": "n_s73cq0",
+      "to": "n_vlh4h6",
+      "relation": "crush",
+      "style": "cracked",
+      "color": "#F56A92",
+      "label": "Love/Hate",
+      "stamp": "♥",
+      "customOffset": 0.10045569251858558
+    },
+    {
+      "id": "e_npklva",
+      "from": "n_s73cq0",
+      "to": "n_31vtxd",
+      "relation": "custom",
+      "style": "twoway",
+      "color": "#8CCBF0",
+      "label": "Partnership",
+      "stamp": "？"
+    },
+    {
+      "id": "e_4xlmp8",
+      "from": "n_s73cq0",
+      "to": "n_ji5smy",
+      "relation": "crush",
+      "style": "dotted",
+      "color": "#8CCBF0",
+      "label": "Partnership",
+      "stamp": "？"
+    },
+    {
+      "id": "e_csvwm2",
+      "from": "n_bo2t83",
+      "to": "n_tcs1on",
+      "relation": "custom",
+      "style": "dotted",
+      "color": "#B7A0EE",
+      "label": "Interest",
+      "stamp": "★"
+    },
+    {
+      "id": "e_lxs8zs",
+      "from": "n_bo2t83",
+      "to": "n_s73cq0",
+      "relation": "trust",
+      "style": "oneway",
+      "color": "#B7A0EE",
+      "label": "Use",
+      "stamp": "★",
+      "customOffset": -48.937561126326074
+    },
+    {
+      "id": "e_kjhj46",
+      "from": "n_bo2t83",
+      "to": "n_oywpik",
+      "relation": "like",
+      "style": "twoway",
+      "color": "#B7A0EE",
+      "label": "Use",
+      "stamp": "♥",
+      "customOffset": -0.1879929956294276
+    },
+    {
+      "id": "e_6sb3nw",
+      "from": "n_s73cq0",
+      "to": "n_bo2t83",
+      "relation": "crush",
+      "style": "oneway",
+      "color": "#B7A0EE",
+      "label": "Use",
+      "stamp": "💢"
+    },
+    {
+      "id": "e_gesfi8",
+      "from": "n_oywpik",
+      "to": "n_s73cq0",
+      "relation": "like",
+      "style": "oneway",
+      "color": "#F56A92",
+      "label": null,
+      "stamp": "💔",
+      "customOffset": -102.65859125628256
+    },
+    {
+      "id": "e_b7sr1y",
+      "from": "n_s73cq0",
+      "to": "n_oywpik",
+      "relation": "like",
+      "style": "dotted",
+      "color": "#F56A92",
+      "label": "Unsure",
+      "stamp": "♡",
+      "customOffset": -51.80558433243056
+    },
+    {
+      "id": "e_e1u8db",
+      "from": "n_bo2t83",
+      "to": "n_ji5smy",
+      "relation": "crush",
+      "style": "oneway",
+      "color": "#8CCBF0",
+      "label": "Interest",
+      "stamp": "？"
+    },
+    {
+      "id": "e_wo8ct5",
+      "from": "n_ji5smy",
+      "to": "n_c60zwq",
+      "relation": "like",
+      "style": "dotted",
+      "color": "#8CCBF0",
+      "label": "Use",
+      "stamp": "？"
+    },
+    {
+      "id": "e_8hdj9p",
+      "from": "n_ji5smy",
+      "to": "n_spevk7",
+      "relation": "like",
+      "style": "twoway",
+      "color": "#f584f5",
+      "label": "Partnership",
+      "stamp": "？"
+    },
+    {
+      "id": "e_4vek1d",
+      "from": "n_oywpik",
+      "to": "n_spevk7",
+      "relation": "like",
+      "style": "heart",
+      "color": "#F56A92",
+      "label": "Family",
+      "stamp": "♡"
+    },
+    {
+      "id": "e_o4d7wu",
+      "from": "n_oywpik",
+      "to": "n_c60zwq",
+      "relation": "like",
+      "style": "heart",
+      "color": "#F56A92",
+      "label": "Friends",
+      "stamp": "♡"
+    },
+    {
+      "id": "e_fc3olx",
+      "from": "n_ji5smy",
+      "to": "n_22o69c",
+      "relation": "rival",
+      "style": "oneway",
+      "color": "#8CCBF0",
+      "label": "Target",
+      "stamp": "⚡"
+    },
+    {
+      "id": "e_uwy9oe",
+      "from": "n_ji5smy",
+      "to": "n_welrga",
+      "relation": "like",
+      "style": "twoway",
+      "color": "#ff8fff",
+      "label": "Partnership",
+      "stamp": "★"
+    },
+    {
+      "id": "e_ftyrqe",
+      "from": "n_qdc6yb",
+      "to": "n_welrga",
+      "relation": "like",
+      "style": "twoway",
+      "color": "#7a6a7a",
+      "label": "Conflict",
+      "stamp": "！"
+    },
+    {
+      "id": "e_7q5iwp",
+      "from": "n_22o69c",
+      "to": "n_qdc6yb",
+      "relation": "like",
+      "style": "dotted",
+      "color": "#7a6a7a",
+      "label": "Conflict",
+      "stamp": "？"
+    },
+    {
+      "id": "e_dc6bc0",
+      "from": "n_ji5smy",
+      "to": "n_i4d6mm",
+      "relation": "like",
+      "style": "oneway",
+      "color": "#F56A92",
+      "label": null,
+      "stamp": "💕"
+    },
+    {
+      "id": "e_w418ky",
+      "from": "n_qdc6yb",
+      "to": "n_spevk7",
+      "relation": "like",
+      "style": "twoway",
+      "color": "#3a2c3a",
+      "label": "Conflict",
+      "stamp": "💢"
+    },
+    {
+      "id": "e_9094yv",
+      "from": "n_bo2t83",
+      "to": "n_qdc6yb",
+      "relation": "like",
+      "style": "dotted",
+      "color": "#7a6a7a",
+      "label": "Partner",
+      "stamp": "♥",
+      "customOffset": -65.45050303349664
+    },
+    {
+      "id": "e_inlb23",
+      "from": "n_qdc6yb",
+      "to": "n_bo2t83",
+      "relation": "like",
+      "style": "oneway",
+      "color": "#7a6a7a",
+      "label": "Wary",
+      "stamp": "💢",
+      "customOffset": -61.36488977417301
+    },
+    {
+      "id": "e_gobau2",
+      "from": "n_bo2t83",
+      "to": "n_spevk7",
+      "relation": "like",
+      "style": "twoway",
+      "color": "#F77F6E",
+      "label": "Partner",
+      "stamp": "？"
+    },
+    {
+      "id": "e_ueqn7w",
+      "from": "n_mcohg3",
+      "to": "n_spevk7",
+      "relation": "like",
+      "style": "twoway",
+      "color": "#7DD8B4",
+      "label": "Dealer",
+      "stamp": "★"
+    },
+    {
+      "id": "e_ze92xe",
+      "from": "n_mcohg3",
+      "to": "n_oywpik",
+      "relation": "like",
+      "style": "twoway",
+      "color": "#7DD8B4",
+      "label": "Dealer",
+      "stamp": "★"
+    },
+    {
+      "id": "e_b4l3av",
+      "from": "n_mcohg3",
+      "to": "n_tcs1on",
+      "relation": "like",
+      "style": "dotted",
+      "color": "#7DD8B4",
+      "label": "Friendship",
+      "stamp": "？"
+    },
+    {
+      "id": "e_a06i2d",
+      "from": "n_qdc6yb",
+      "to": "n_c60zwq",
+      "relation": "like",
+      "style": "cracked",
+      "color": "#7a6a7a",
+      "label": "Продажа оружия",
+      "stamp": "？"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g_2y7akp",
+      "name": "Bar",
+      "color": "#FFB3C7",
+      "showName": true,
+      "nodeIds": [
+        "n_oywpik",
+        "n_spevk7",
+        "n_c60zwq",
+        "n_i4d6mm"
+      ],
+      "labelOffset": {
+        "dx": 5.182075776605026,
+        "dy": 288.94074870823243
+      }
+    },
+    {
+      "id": "g_pstnt6",
+      "name": "Scientists",
+      "color": "#B5D9F2",
+      "showName": true,
+      "nodeIds": [
+        "n_vlh4h6",
+        "n_tcs1on",
+        "n_31vtxd"
+      ],
+      "labelOffset": {
+        "dx": 1.3229038974422587,
+        "dy": 123.5609092490018
+      }
+    },
+    {
+      "id": "g_efapi7",
+      "name": "Police",
+      "color": "#B5D9F2",
+      "showName": true,
+      "nodeIds": [
+        "n_22o69c",
+        "n_welrga",
+        "n_qdc6yb"
+      ],
+      "labelOffset": {
+        "dx": 33.771967012411295,
+        "dy": 239.71524190022177
+      }
+    },
+    {
+      "id": "g_do37sg",
+      "name": "Androids",
+      "color": "#e5fbff",
+      "showName": true,
+      "nodeIds": [
+        "n_i4d6mm",
+        "n_ji5smy",
+        "n_22o69c"
+      ],
+      "labelOffset": {
+        "dx": -144.8621898396644,
+        "dy": 284.61813915799115
+      }
+    },
+    {
+      "id": "g_hd3acf",
+      "name": "Drugs lol",
+      "color": "#C7EFC0",
+      "showName": true,
+      "nodeIds": [
+        "n_mcohg3",
+        "n_spevk7",
+        "n_oywpik",
+        "n_tcs1on",
+        "n_i4d6mm"
+      ],
+      "labelOffset": {
+        "dx": 47.66667100529209,
+        "dy": 976.8170708203104
+      }
+    },
+    {
+      "id": "g_q92a1w",
+      "name": "Потенциальный бунт",
+      "color": "#FFE8A3",
+      "showName": true,
+      "nodeIds": [
+        "n_c60zwq",
+        "n_ji5smy",
+        "n_s73cq0",
+        "n_qdc6yb",
+        "n_tcs1on",
+        "n_22o69c",
+        "n_i4d6mm"
+      ],
+      "labelOffset": {
+        "dx": -2.5025634238238865,
+        "dy": 676.046022290365
+      }
+    }
+  ],
+  "writings": []
+}
